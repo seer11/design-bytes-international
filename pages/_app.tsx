@@ -1,10 +1,8 @@
-/** @format */
-
 import { store } from "../app/store";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import React, { useState, useEffect } from "react";
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Head from "next/head";
 import Router from "next/router";
 import ProgressBar from "@badrap/bar-of-progress";
@@ -22,6 +20,22 @@ Router.events.on("routeChangeStart", progress.start);
 Router.events.on("routeChangeComplete", progress.finish);
 Router.events.on("routeChangeError", progress.finish);
 
+// Define a CSS spinner animation
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+// Styled component for the spinner
+const Spinner = styled.div`
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: ${spin} 2s linear infinite;
+`;
+
 const Preloader = styled.div`
   position: fixed;
   top: 0;
@@ -36,9 +50,11 @@ const Preloader = styled.div`
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(false);
+
     const handleRouteChangeStart = () => {
       setLoading(true);
     };
@@ -61,7 +77,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       {loading && (
-        <Preloader>Loading...</Preloader>
+        <Preloader>
+          <Spinner /> {/* Render the spinner component */}
+        </Preloader>
       )}
       <Layout>
         <Head>
