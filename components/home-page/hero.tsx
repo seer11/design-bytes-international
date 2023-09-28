@@ -67,7 +67,7 @@ const Hero: FC = () => {
 					<CustomButton>MAKE A SCHEDULE</CustomButton>
 				</ContentContainer>
 
-				<ImageContainer
+				{/* <ImageContainer
 					style={{
 						position: "relative",
 						cursor: "pointer",
@@ -78,9 +78,9 @@ const Hero: FC = () => {
 						layout='fill'
 						objectFit='cover'
 					/>
-				</ImageContainer>
+				</ImageContainer> */}
 
-				<HiddenImageContainer>
+				{/* <HiddenImageContainer>
 					<Image
 						src='/home/home1.jpg'
 						alt='Hero Image'
@@ -88,7 +88,7 @@ const Hero: FC = () => {
 						height={400}
 						layout='responsive'
 					/>
-				</HiddenImageContainer>
+				</HiddenImageContainer> */}
 			</CustomContainer>
 		</HeroWrapper>
 	);
