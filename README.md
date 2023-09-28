@@ -1,6 +1,6 @@
 # www.phoenixtechteam.com
 
-Building PHOENIX SOFTWARE SOLUTION Agency WebSide with React Js, Next Js, TypeScript, Redux, 
+Building Software Solution Agency WebSide with React Js, Next Js, TypeScript, Redux, 
 Styled Components, Node Js, Express, MongoDB, Socket.IO, Vercel Hosting,
 with complete user authentication (a mobile-friendly).
 

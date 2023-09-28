@@ -26,7 +26,7 @@ const TESTIMONIAL: FC = () => {
 					<div className='second-content'>
 						<h2>Web Development</h2>
 						<p className='p-s'>
-							Phoenix Software Solutions is absolutely incredible. They
+							Software Solutions is absolutely incredible. They
 							are the most talented group of designers I,ve ever worked
 							with or encountered.
 						</p>

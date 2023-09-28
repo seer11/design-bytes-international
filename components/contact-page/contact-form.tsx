@@ -102,7 +102,7 @@ const ContactFormComponent: FC = () => {
 											/>
 										</ModifiedArrows>
 									</ArrowsWrapper>
-									<p>info@phoenixsoftwaresolutionsllc.com</p>
+									<p>info@designbytesinternational.com</p>
 								</div>
 
 								<div className='first-contact'>

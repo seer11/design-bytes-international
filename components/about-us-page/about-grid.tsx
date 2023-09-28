@@ -10,39 +10,42 @@ const Grid: FC = () => {
 			<GridContainer>
 				<GridItem
 					src='/about-us/tem-img.png'
-					title='Founder'
+					title='Co-Founder & CEO'
 					founder='Founder'
-					name='Otoniel Cortez'
+					name='Kashif Ahmad'
 				/>
 
 				<GridItem
 					src='/about-us/tem3.png'
-					title='FMarketer'
-					name='Saddam'
+					title='Co-Founder & CTO'
+					founder='Founder'
+					name='Abid Rozdar'
+				/>
+
+				<GridItem
+					src='/about-us/tem2.png'
+					title='Co-Founder & CFO'
+					founder='Founder'
+					name='Ameer Hayat'
+				/>
+
+				<GridItem
+					src='/about-us/tem2.png'
+					title='Co-Founder & COO'
+					founder='Founder'
+					name='Ejaz Karim'
+				/>
+
+				{/* <GridItem
+					src='/about-us/tem2.png'
+					title='UI Designer'
+					name='Muneer Hayat'
 				/>
 
 				<GridItem
 					src='/about-us/tem2.png'
 					title='UI Designer'
-					name='Dimitris'
-				/>
-
-				<GridItem
-					src='/about-us/tem2.png'
-					title='UI Designer'
-					name='Fariz Al Faridli'
-				/>
-
-				<GridItem
-					src='/about-us/tem2.png'
-					title='UI Designer'
-					name='Safwann'
-				/>
-
-				<GridItem
-					src='/about-us/tem2.png'
-					title='UI Designer'
-					name='Faris Setiawan'
+					name='Tanveer'
 				/>
 
 				<GridItem
@@ -55,7 +58,7 @@ const Grid: FC = () => {
 					src='/about-us/tem2.png'
 					title='UI Designer'
 					name='Faris Setiawan'
-				/>
+				/> */}
 
 				<GridItem join='Join' />
 			</GridContainer>

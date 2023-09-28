@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
 												<Image
 													className='logo-img'
 													src='/logo/logo.png'
-													alt='PHOENIX LOGO'
+													alt='DESIGN BYTES LOGO'
 													layout='fill'
 													objectFit='contain'
 												/>
@@ -139,17 +139,17 @@ const Footer: React.FC = () => {
 								<div id='head'></div>
 							</h3>
 							<li>
-								<Link href='#'>Instagram.com/phonenixsoftllc</Link>
+								<Link href='#'>Instagram.com/designbytesinternational</Link>
 							</li>
 							<li>
-								<Link href='#'>Twitter.com/phoenixsoftllc</Link>
+								<Link href='#'>Twitter.com/designbytesinternational</Link>
 							</li>
 							<li>
-								<Link href='#'>linkedIn.com/phoenixsoftllc</Link>
+								<Link href='#'>linkedIn.com/designbytesinternational</Link>
 							</li>
 							<li>
 								<Link href='#'>
-									1415 Piper St Grand Island, NE 68803
+									Hussain Abad Colony Jutial Gilgit
 								</Link>
 							</li>
 

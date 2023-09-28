@@ -15,7 +15,7 @@ const Meeting: FC = () => {
 						<div className='content-container'>
 							<h2>Lets Meet Our Team </h2>
 							<div>
-								<p>7 Member</p>
+								<p>60 Member</p>
 								<span>DESIGNER - DEVELOPER - MARKETING</span>
 							</div>
 						</div>

@@ -24,7 +24,7 @@ const Logo: React.FC<Props> = ({ isTransparent, visible }) => {
 				<Image
 					className='logo-img'
 					src='/logo/logo.png'
-					alt='PHOENIX LOGO'
+					alt='DESIGN BYTES LOGO'
 					layout='fill'
 					objectFit='contain'
 				/>

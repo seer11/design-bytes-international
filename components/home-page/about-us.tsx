@@ -33,7 +33,7 @@ const AboutUsCom: FC = () => {
 					<h2>ABOUT US</h2>
 					<ContentTop>
 						<div className='heading'>
-							Number One Technology Agency in Pasuruan
+							Number One Technology Agency in Pakistan
 						</div>
 						<div className='job-success'>
 							<p className='job-s'>100+</p>
@@ -49,7 +49,7 @@ const AboutUsCom: FC = () => {
 					<ContentBottom>
 						<div>
 							<p>
-								We are a remote design agency based in Omaha, Nebraska,
+								We are a remote design agency based in Gilgit-Baltistan, 
 								working with clients around the world. As passionate
 								designers, we love building products that are easy to
 								use, accessible, engaging, and delightful. Making people
