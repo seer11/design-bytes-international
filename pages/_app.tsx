@@ -1,3 +1,5 @@
+/** @format */
+
 import { store } from "../app/store";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
@@ -60,7 +62,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
 
     const handleRouteChangeComplete = () => {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     };
 
     Router.events.on('routeChangeStart', handleRouteChangeStart);
@@ -78,7 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       {loading && (
         <Preloader>
-          <Spinner /> {/* Render the spinner component */}
+          <Spinner />
         </Preloader>
       )}
       <Layout>
