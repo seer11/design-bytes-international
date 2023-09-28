@@ -16,8 +16,8 @@ body {
 	--max-width1250: 78.125rem;
 	--max-width: 87.5rem;
 	--color-primary: #0f0b33;
-	--color-secondary: #00d0b0;
-	--color-secondary-second: #ff9700;
+	--color-secondary: #ff9700;
+	--color-secondary-second: #00d0b0;
 
 	--transition-duration: 0.3s;
 	--line-height: 1.7;

@@ -19,7 +19,8 @@ const Logo: React.FC<Props> = ({ isTransparent, visible }) => {
 				style={{
 					position: "relative",
 					cursor: "pointer",
-				}}>
+				}}
+				>
 				<Image
 					className='logo-img'
 					src='/logo/logo.png'
@@ -28,7 +29,7 @@ const Logo: React.FC<Props> = ({ isTransparent, visible }) => {
 					objectFit='contain'
 				/>
 			</div>
-			<div>PHOENIX </div>
+			{/* <div>PHOENIX </div> */}
 		</Wrapper>
 	);
 };
@@ -52,8 +53,8 @@ const Wrapper = styled.div<Props>`
 	}
 
 	.logo {
-		width: 3.825rem;
-		height: 2.237rem;
+		width: 12.825rem;
+		height: 11.237rem;
 		display: flex;
 		align-items: center;
 		img {

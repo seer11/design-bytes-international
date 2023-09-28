@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
 													objectFit='contain'
 												/>
 											</div>
-											<div>PHOENIX </div>
+											{/* <div>PHOENIX </div> */}
 										</LogoImage>
 									</a>
 								</Link>
@@ -287,8 +287,8 @@ const LogoImage = styled.div`
 		margin-left: 0;
 	}
 	.logo {
-		width: 3.825rem;
-		height: 2.237rem;
+		width: 12.825rem;
+		height: 11.237rem;
 		display: flex;
 		align-items: center;
 		img {
