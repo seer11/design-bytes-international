@@ -2,7 +2,7 @@ import { store } from "../app/store";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import React, { useEffect, useRef, useState } from "react";
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import Head from "next/head";
 import Router from "next/router";
 import ProgressBar from "@badrap/bar-of-progress";
@@ -29,59 +29,61 @@ const spin = keyframes`
 // Styled component for the spinner
 const Spinner = styled.div`
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid #cd8b49;
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: ${spin} 2s linear infinite;
 `;
 
-// Update the Preloader background color to a solid color
+// Preloader styled component
 const Preloader = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff; // Updated to a solid color
+  background-color: #112d69;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 `;
 
+const Content = styled.div`
+  visibility: ${(props: { visible: boolean }) => (props.visible ? 'visible' : 'hidden')};
+`;
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
+  const [contentVisible, setContentVisible] = useState(false);
   const hasMounted = useRef(false);
 
   useEffect(() => {
     if (!hasMounted.current) {
-      // This is the first mount, show loader
       hasMounted.current = true;
-      // Set loading to false after the initial load
       setTimeout(() => {
         setLoading(false);
-      }, 2000); // Adjust the timeout as needed
+        setContentVisible(true);
+      }, 2000);
     }
   }, []);
 
   return (
     <Provider store={store}>
-      {loading && (
-        <Preloader>
-          <Spinner />
-        </Preloader>
-      )}
-      <Layout>
-        <Head>
-          <title>Design Bytes International</title>
-          <meta
-            name='description'
-            content='Helping companies & individuals identify key solutions for their target markets. We boost their ability to create products. Our business model saves clients time and money. Don`t reinvent the wheel..'
-          />
-        </Head>
-        <Component {...pageProps} />
-      </Layout>
+      {loading && <Preloader><Spinner /></Preloader>}
+      <Content visible={contentVisible}>
+        <Layout>
+          <Head>
+            <title>Design Bytes International</title>
+            <meta
+              name='description'
+              content='Helping companies & individuals identify key solutions for their target markets. We boost their ability to create products. Our business model saves clients time and money. Don`t reinvent the wheel..'
+            />
+          </Head>
+          <Component {...pageProps} />
+        </Layout>
+      </Content>
     </Provider>
   );
 }
