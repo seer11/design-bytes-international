@@ -1,8 +1,8 @@
 import { store } from "../app/store";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
-import React, { useEffect, useRef, useState } from "react";
-import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled, { keyframes } from 'styled-components';
 import Head from "next/head";
 import Router from "next/router";
 import ProgressBar from "@badrap/bar-of-progress";
@@ -51,39 +51,39 @@ const Preloader = styled.div`
 `;
 
 const Content = styled.div`
-  visibility: ${(props: { visible: boolean }) => (props.visible ? 'visible' : 'hidden')};
+  display: ${(props: { visible: boolean }) => (props.visible ? 'block' : 'none')};
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
-  const [contentVisible, setContentVisible] = useState(false);
-  const hasMounted = useRef(false);
 
   useEffect(() => {
-    if (!hasMounted.current) {
-      hasMounted.current = true;
-      setTimeout(() => {
-        setLoading(false);
-        setContentVisible(true);
-      }, 2000);
-    }
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    // Clear the timeout in case the component is unmounted before the timeout finishes
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <Provider store={store}>
-      {loading && <Preloader><Spinner /></Preloader>}
-      <Content visible={contentVisible}>
-        <Layout>
-          <Head>
-            <title>Design Bytes International</title>
-            <meta
-              name='description'
-              content='Helping companies & individuals identify key solutions for their target markets. We boost their ability to create products. Our business model saves clients time and money. Don`t reinvent the wheel..'
-            />
-          </Head>
-          <Component {...pageProps} />
-        </Layout>
-      </Content>
+      {loading ? (
+        <Preloader><Spinner /></Preloader>
+      ) : (
+        <Content visible={!loading}>
+          <Layout>
+            <Head>
+              <title>Design Bytes International</title>
+              <meta
+                name='description'
+                content='Helping companies & individuals identify key solutions for their target markets. We boost their ability to create products. Our business model saves clients time and money. Don`t reinvent the wheel..'
+              />
+            </Head>
+            <Component {...pageProps} />
+          </Layout>
+        </Content>
+      )}
     </Provider>
   );
 }
