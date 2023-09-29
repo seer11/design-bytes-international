@@ -1,9 +1,7 @@
-/** @format */
-
 import { store } from "../app/store";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from 'styled-components';
 import Head from "next/head";
 import Router from "next/router";
@@ -38,13 +36,14 @@ const Spinner = styled.div`
   animation: ${spin} 2s linear infinite;
 `;
 
+// Update the Preloader background color to a solid color
 const Preloader = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff; // Updated to a solid color
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,29 +52,17 @@ const Preloader = styled.div`
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
+  const hasMounted = useRef(false);
 
   useEffect(() => {
-    setLoading(false);
-
-    const handleRouteChangeStart = () => {
-      setLoading(true);
-    };
-
-    const handleRouteChangeComplete = () => {
+    if (!hasMounted.current) {
+      // This is the first mount, show loader
+      hasMounted.current = true;
+      // Set loading to false after the initial load
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
-    };
-
-    Router.events.on('routeChangeStart', handleRouteChangeStart);
-    Router.events.on('routeChangeComplete', handleRouteChangeComplete);
-    Router.events.on('routeChangeError', handleRouteChangeComplete);
-
-    return () => {
-      Router.events.off('routeChangeStart', handleRouteChangeStart);
-      Router.events.off('routeChangeComplete', handleRouteChangeComplete);
-      Router.events.off('routeChangeError', handleRouteChangeComplete);
-    };
+      }, 2000); // Adjust the timeout as needed
+    }
   }, []);
 
   return (
