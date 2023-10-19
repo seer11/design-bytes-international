@@ -75,15 +75,15 @@ const Home: NextPage = () => {
 export default Home;
 
 const AbsoluteBackGroundlinearGradient = styled.div`
-	width: 1500px;
-	height: 1500px;
+	width: 1100px;
+	height: 1100px;
 	top: -700px;
 	left: -700px;
 	position: absolute;
 	pointer-events: none;
 	z-index: 10;
-	@media (min-width: 1500px) {
-		width: 1800px;
+	@media (min-width: 1100px) {
+		width: 3000px;
 		height: 1700px;
 	}
 `;

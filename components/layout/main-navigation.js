@@ -106,7 +106,7 @@ function MainNavigation() {
 							</li>
 						</ul>
 					</nav>
-					<button>GET STARTED</button>
+					{/* <button>GET STARTED</button> */}
 				</CustomContainer>
 			</Header>
 			{burgerMenuStatus && (
